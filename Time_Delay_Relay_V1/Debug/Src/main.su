@@ -1,0 +1,16 @@
+../Inc/core_cm4.h:1814:22:__NVIC_SetPriority	16	static
+../Inc/core_cm4.h:2022:26:SysTick_Config	16	static
+../Inc/main.h:51:22:MCU_Clock_Setup	16	static
+D:/STM32F407_Projects/Time_Delay_Relay_V1/Driver/GPIO/GPIO.h:71:23:GPIO_Pin_Low	16	static
+D:/STM32F407_Projects/Time_Delay_Relay_V1/Driver/GPIO/GPIO.h:121:23:GPIO_Pin_High	16	static
+D:/STM32F407_Projects/Time_Delay_Relay_V1/Driver/Timer/Timer.h:65:22:Timer_Trigger	16	static
+../Src/main.c:55:6:H1_L1	16	static
+../Src/main.c:68:6:H1_L2	16	static
+../Src/main.c:81:6:H2_L1	16	static
+../Src/main.c:94:6:H2_L2	16	static
+../Src/main.c:107:6:Speed_Tap_1	16	static
+../Src/main.c:120:6:Speed_Tap_2	16	static
+../Src/main.c:134:6:Delay_Timer_ISR	8	static
+../Src/main.c:211:6:G_Call_ISR	4	static
+../Src/main.c:218:6:W_Call_ISR	4	static
+../Src/main.c:226:5:main	32	static
