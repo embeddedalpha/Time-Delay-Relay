@@ -24,32 +24,37 @@ volatile States_of_Flags Delay_Flag = Undefined;
 
 volatile States_of_Flags Speed_Tap1_Flag = Undefined;
 volatile States_of_Flags Speed_Tap2_Flag = Undefined;
-volatile States_of_Flags Heater_Flag_1,Heater_Flag_2  = Undefined;
+volatile States_of_Flags Heater_Flag_1 = Undefined, Heater_Flag_2 = Undefined;
 
-const uint8_t heater1_on_timer_delay = 15;
-volatile uint8_t heater1_delay_on_timer_tick = 0;
+volatile uint16_t W_Flag_Count_ON = 0;
+volatile uint16_t W_Flag_Count_OFF = 0;
 
-const uint8_t heater2_on_timer_delay = 20;
-volatile uint8_t heater2_delay_on_timer_tick = 0;
+const uint16_t fan1_on_delay = 15;
+volatile uint16_t fan1_delay_on_timer_tick = 0;
 
-const uint8_t heater1_off_timer_delay = 15;
-volatile uint8_t heater1_delay_off_timer_tick = 0;
+const uint16_t fan2_on_delay = 10;
+volatile uint16_t fan2_delay_on_timer_tick = 0;
 
-const uint8_t heater2_off_timer_delay = 20;
-volatile uint8_t heater2_delay_off_timer_tick = 0;
+const uint16_t heater1_on_timer_delay = 15;
+volatile uint16_t heater1_delay_on_timer_tick = 0;
+
+const uint16_t heater2_on_timer_delay = 20;
+volatile uint16_t heater2_delay_on_timer_tick = 0;
 
 
-const uint8_t fan1_on_delay = 15;
-volatile uint8_t fan1_delay_on_timer_tick = 0;
 
-const uint8_t fan1_off_delay = 15;
-volatile uint8_t fan1_delay_off_timer_tick = 0;
 
-const uint8_t fan2_on_delay = 10;
-volatile uint8_t fan2_delay_on_timer_tick = 0;
+const uint16_t fan1_off_delay = 15;
+volatile uint16_t fan1_delay_off_timer_tick = 0;
 
-const uint8_t fan2_off_delay = 90;
-volatile uint8_t fan2_delay_off_timer_tick = 0;
+const uint16_t fan2_off_delay = 15;
+volatile uint16_t fan2_delay_off_timer_tick = 0;
+
+const uint16_t heater1_off_timer_delay = 20;
+volatile uint16_t heater1_delay_off_timer_tick = 0;
+
+const uint16_t heater2_off_timer_delay = 15;
+volatile uint16_t heater2_delay_off_timer_tick = 0;
 
 
 void H1_L1(bool on_off)
@@ -137,13 +142,17 @@ void Delay_Timer_ISR()
 
 	if(G_Flag == On)
 	{
-		fan1_delay_on_timer_tick += 1;
-		if(fan1_delay_on_timer_tick >= fan1_on_delay)
+		if((Speed_Tap2_Flag == Undefined) || (Speed_Tap2_Flag == Off))
 		{
-			Speed_Tap_1(1);
-			G_Flag = Undefined;
-			fan1_delay_on_timer_tick = 0;
+			fan1_delay_on_timer_tick += 1;
+			if(fan1_delay_on_timer_tick >= fan1_on_delay)
+			{
+				Speed_Tap_1(true);
+				G_Flag = Undefined;
+				fan1_delay_on_timer_tick = 0;
+			}
 		}
+
 	}
 
 	if(G_Flag == Off)
@@ -151,7 +160,7 @@ void Delay_Timer_ISR()
 		fan1_delay_off_timer_tick += 1;
 		if(fan1_delay_off_timer_tick >= fan1_off_delay)
 		{
-			Speed_Tap_1(0);
+			Speed_Tap_1(false);
 			G_Flag = Undefined;
 			fan1_delay_off_timer_tick = 0;
 		}
@@ -161,45 +170,64 @@ void Delay_Timer_ISR()
 
 	if(W_Flag == On)
 	{
-		static uint8_t W_Flag_Count = 0;
-		Speed_Tap_1(0);
+
+		Speed_Tap_1(false);
 		fan2_delay_on_timer_tick += 1;
 		if(fan2_delay_on_timer_tick >= fan2_on_delay)
 		{
-			Speed_Tap_2(1);
-			W_Flag_Count += fan2_delay_on_timer_tick;
-			fan2_delay_on_timer_tick = 0;
-
+			Speed_Tap_2(true);
 		}
 
 		heater1_delay_on_timer_tick += 1;
-		if((heater1_delay_on_timer_tick >= heater1_on_timer_delay) && (W_Flag_Count >=  fan2_delay_on_timer_tick))
+		if(heater1_delay_on_timer_tick >= heater1_on_timer_delay)
 		{
-			H1_L1(1);
-			H1_L2(1);
-			W_Flag_Count += heater1_delay_on_timer_tick;
-			heater1_delay_on_timer_tick = 0;
+			H1_L1(true);
+			H1_L2(true);
 		}
 
 		heater2_delay_on_timer_tick += 1;
-		if((heater2_delay_on_timer_tick >= heater2_on_timer_delay) && (W_Flag_Count >=  (fan2_delay_on_timer_tick+heater1_delay_on_timer_tick)))
+		if(heater2_delay_on_timer_tick >= heater2_on_timer_delay)
 		{
-			H2_L1(1);
-			H2_L2(1);
-			W_Flag_Count += heater2_delay_on_timer_tick;
-			heater2_delay_on_timer_tick = 0;
+			H2_L1(true);
+			H2_L2(true);
 		}
 
-		if(W_Flag_Count >= (fan2_on_delay + heater1_on_timer_delay + heater2_on_timer_delay))
+		W_Flag_Count_ON++;
+		if (W_Flag_Count_ON >= (fan2_on_delay + heater1_on_timer_delay + heater2_on_timer_delay))
 		{
 			W_Flag = Undefined;
-			W_Flag_Count = 0;
+			W_Flag_Count_ON = 0;
+			fan2_delay_on_timer_tick = 0;
+			heater1_delay_on_timer_tick = 0;
+			heater2_delay_on_timer_tick = 0;
 		}
 	}
 
 	if(W_Flag == Off)
 	{
 
+
+			H2_L1(false);
+			H2_L2(false);
+
+			H1_L1(false);
+			H1_L2(false);
+
+
+		fan2_delay_off_timer_tick += 1;
+		if((fan2_delay_off_timer_tick >= fan2_off_delay))
+		{
+			Speed_Tap_2(false);
+		}
+
+		W_Flag_Count_OFF++;
+
+		if (W_Flag_Count_OFF >= fan2_off_delay)
+		{
+			W_Flag = Undefined;
+			W_Flag_Count_OFF = 0;
+			fan2_delay_off_timer_tick = 0;
+		}
 	}
 
 }
