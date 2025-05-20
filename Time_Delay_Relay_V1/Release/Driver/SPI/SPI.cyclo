@@ -1,0 +1,13 @@
+../Driver/SPI/SPI.c:19:6:SPI1_TX_ISR	1
+../Driver/SPI/SPI.c:24:6:SPI1_RX_ISR	1
+../Driver/SPI/SPI.c:151:8:SPI_Clock_Enable	4
+../Driver/SPI/SPI.c:168:8:SPI_Clock_Disable	4
+../Driver/SPI/SPI.c:185:8:SPI_Config_Reset	4
+../Driver/SPI/SPI.c:342:8:SPI_Init	93
+../Driver/SPI/SPI.c:465:6:SPI_Enable	1
+../Driver/SPI/SPI.c:477:6:SPI_Disable	1
+../Driver/SPI/SPI.c:489:6:SPI_DeInit	4
+../Driver/SPI/SPI.c:505:10:SPI_TRX_Byte	5
+../Driver/SPI/SPI.c:517:8:SPI_TRX_Buffer_16Bit	22
+../Driver/SPI/SPI.c:671:8:SPI_TRX_Buffer_8Bit	22
+../Driver/SPI/SPI.c:818:6:SPI_Data_Format_Update	3

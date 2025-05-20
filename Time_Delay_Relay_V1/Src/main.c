@@ -172,6 +172,8 @@ void Delay_Timer_ISR()
 	{
 
 		Speed_Tap_1(false);
+		fan1_delay_off_timer_tick = 0;
+		fan1_delay_on_timer_tick = 0;
 		fan2_delay_on_timer_tick += 1;
 		if(fan2_delay_on_timer_tick >= fan2_on_delay)
 		{
