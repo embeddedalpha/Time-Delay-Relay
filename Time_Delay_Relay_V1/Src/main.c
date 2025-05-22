@@ -38,7 +38,7 @@ volatile uint16_t fan2_delay_on_timer_tick = 0;
 const uint16_t heater1_on_timer_delay = 15;
 volatile uint16_t heater1_delay_on_timer_tick = 0;
 
-const uint16_t heater2_on_timer_delay = 20;
+const uint16_t heater2_on_timer_delay = 17;
 volatile uint16_t heater2_delay_on_timer_tick = 0;
 
 

@@ -11838,7 +11838,7 @@ void Delay_Timer_ISR()
  8004cea:	4b3b      	ldr	r3, [pc, #236]	@ (8004dd8 <Delay_Timer_ISR+0x1ec>)
  8004cec:	881b      	ldrh	r3, [r3, #0]
  8004cee:	b29b      	uxth	r3, r3
- 8004cf0:	2214      	movs	r2, #20
+ 8004cf0:	2211      	movs	r2, #17
  8004cf2:	4293      	cmp	r3, r2
  8004cf4:	d305      	bcc.n	8004d02 <Delay_Timer_ISR+0x116>
 		{
@@ -11867,7 +11867,7 @@ void Delay_Timer_ISR()
  8004d1a:	4619      	mov	r1, r3
  8004d1c:	230f      	movs	r3, #15
  8004d1e:	440b      	add	r3, r1
- 8004d20:	2114      	movs	r1, #20
+ 8004d20:	2111      	movs	r1, #17
  8004d22:	440b      	add	r3, r1
  8004d24:	429a      	cmp	r2, r3
  8004d26:	db0e      	blt.n	8004d46 <Delay_Timer_ISR+0x15a>
