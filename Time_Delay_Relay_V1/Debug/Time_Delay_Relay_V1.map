@@ -818,6 +818,126 @@ Discarded input sections
  .debug_frame   0x00000000      0x3b0 ./Driver/I2C/I2C.o
  .ARM.attributes
                 0x00000000       0x34 ./Driver/I2C/I2C.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .group         0x00000000        0xc ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .text          0x00000000        0x0 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .data          0x00000000        0x0 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .bss           0x00000000        0x0 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .bss.reload_value
+                0x00000000        0x4 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .text.IWDG_Init
+                0x00000000       0x84 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .text.IWDG_Kick
+                0x00000000       0x1c ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .text.IWDG_Reset_Check
+                0x00000000       0x40 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .bss.reset_check.0
+                0x00000000        0x1 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_info    0x00000000      0x335 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_abbrev  0x00000000      0x12a ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_aranges
+                0x00000000       0x30 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_rnglists
+                0x00000000       0x20 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x276 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0xaba ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x2f ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x22 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x8e ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x51 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x103 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x6a ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x1df ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x1c ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x22 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0xfb ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000     0x1011 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x11f ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000    0x15e97 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x97 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x61 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x2a ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x43 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x34 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x16 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x9e ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x369 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x10b ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x10 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x16 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x43 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x34 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x10 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x58 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x8e ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x1c ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x177 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x16 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x16 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x146 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x19b ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x10 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x35 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000      0x460 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x16 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x20 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x16 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x16 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x29 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x4c ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x22 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_macro   0x00000000       0x10 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_line    0x00000000      0x73e ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_str     0x00000000    0x8dbab ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .comment       0x00000000       0x44 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .debug_frame   0x00000000       0x78 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .ARM.attributes
+                0x00000000       0x34 ./Driver/Independent_WatchDog/Independent_WatchDog.o
  .group         0x00000000        0xc ./Driver/Logs/Logs.o
  .group         0x00000000        0xc ./Driver/Logs/Logs.o
  .group         0x00000000        0xc ./Driver/Logs/Logs.o
@@ -2437,6 +2557,7 @@ LOAD ./Driver/Console/Console.o
 LOAD ./Driver/DMA/DMA.o
 LOAD ./Driver/GPIO/GPIO.o
 LOAD ./Driver/I2C/I2C.o
+LOAD ./Driver/Independent_WatchDog/Independent_WatchDog.o
 LOAD ./Driver/Logs/Logs.o
 LOAD ./Driver/SPI/SPI.o
 LOAD ./Driver/Timer/Timer.o
@@ -3145,14 +3266,14 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000d8a       0x2e ./Src/system_stm32f4xx.o
  .debug_macro   0x00000db8       0x6d ./Src/system_stm32f4xx.o
 
-.debug_line     0x00000000     0x8148
+.debug_line     0x00000000     0x8138
  .debug_line    0x00000000     0x1e1c ./Driver/DMA/DMA.o
  .debug_line    0x00001e1c      0xb7b ./Driver/GPIO/GPIO.o
  .debug_line    0x00002997     0x2415 ./Driver/Timer/Timer.o
  .debug_line    0x00004dac     0x214e ./Driver/USART/USART.o
- .debug_line    0x00006efa      0xca2 ./Src/main.o
- .debug_line    0x00007b9c      0x531 ./Src/system_stm32f4xx.o
- .debug_line    0x000080cd       0x7b ./Startup/startup_stm32f407vgtx.o
+ .debug_line    0x00006efa      0xc92 ./Src/main.o
+ .debug_line    0x00007b8c      0x531 ./Src/system_stm32f4xx.o
+ .debug_line    0x000080bd       0x7b ./Startup/startup_stm32f407vgtx.o
 
 .debug_str      0x00000000    0x906a6
  .debug_str     0x00000000    0x8e7ef ./Driver/DMA/DMA.o

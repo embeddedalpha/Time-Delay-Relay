@@ -4690,7 +4690,7 @@ Disassembly of section .text:
  8002c2c:	800b      	strh	r3, [r1, #0]
  8002c2e:	880b      	ldrh	r3, [r1, #0]
  8002c30:	b29b      	uxth	r3, r3
- 8002c32:	2b13      	cmp	r3, #19
+ 8002c32:	2b10      	cmp	r3, #16
  8002c34:	d90d      	bls.n	8002c52 <Delay_Timer_ISR+0xfa>
  8002c36:	4b25      	ldr	r3, [pc, #148]	@ (8002ccc <Delay_Timer_ISR+0x174>)
  8002c38:	695d      	ldr	r5, [r3, #20]
@@ -4711,7 +4711,7 @@ Disassembly of section .text:
  8002c5a:	802b      	strh	r3, [r5, #0]
  8002c5c:	882b      	ldrh	r3, [r5, #0]
  8002c5e:	b29b      	uxth	r3, r3
- 8002c60:	2b2c      	cmp	r3, #44	@ 0x2c
+ 8002c60:	2b29      	cmp	r3, #41	@ 0x29
  8002c62:	d905      	bls.n	8002c70 <Delay_Timer_ISR+0x118>
  8002c64:	2300      	movs	r3, #0
  8002c66:	7023      	strb	r3, [r4, #0]

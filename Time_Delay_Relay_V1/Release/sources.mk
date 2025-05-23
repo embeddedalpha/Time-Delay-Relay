@@ -27,6 +27,7 @@ Driver/Console \
 Driver/DMA \
 Driver/GPIO \
 Driver/I2C \
+Driver/Independent_WatchDog \
 Driver/Logs \
 Driver/SPI \
 Driver/Timer \

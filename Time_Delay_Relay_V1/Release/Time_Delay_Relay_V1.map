@@ -251,6 +251,18 @@ Discarded input sections
  .comment       0x00000000       0x44 ./Driver/I2C/I2C.o
  .ARM.attributes
                 0x00000000       0x34 ./Driver/I2C/I2C.o
+ .text          0x00000000        0x0 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .data          0x00000000        0x0 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .bss           0x00000000        0x0 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .text.IWDG_Init
+                0x00000000       0x44 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .text.IWDG_Kick
+                0x00000000       0x10 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .bss.reload_value
+                0x00000000        0x4 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .comment       0x00000000       0x44 ./Driver/Independent_WatchDog/Independent_WatchDog.o
+ .ARM.attributes
+                0x00000000       0x34 ./Driver/Independent_WatchDog/Independent_WatchDog.o
  .text          0x00000000        0x0 ./Driver/Logs/Logs.o
  .data          0x00000000        0x0 ./Driver/Logs/Logs.o
  .bss           0x00000000        0x0 ./Driver/Logs/Logs.o
@@ -1049,6 +1061,7 @@ LOAD ./Driver/Console/Console.o
 LOAD ./Driver/DMA/DMA.o
 LOAD ./Driver/GPIO/GPIO.o
 LOAD ./Driver/I2C/I2C.o
+LOAD ./Driver/Independent_WatchDog/Independent_WatchDog.o
 LOAD ./Driver/Logs/Logs.o
 LOAD ./Driver/SPI/SPI.o
 LOAD ./Driver/Timer/Timer.o

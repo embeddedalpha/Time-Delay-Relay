@@ -15,6 +15,7 @@ RM := rm -rf
 -include Driver/Timer/subdir.mk
 -include Driver/SPI/subdir.mk
 -include Driver/Logs/subdir.mk
+-include Driver/Independent_WatchDog/subdir.mk
 -include Driver/I2C/subdir.mk
 -include Driver/GPIO/subdir.mk
 -include Driver/DMA/subdir.mk

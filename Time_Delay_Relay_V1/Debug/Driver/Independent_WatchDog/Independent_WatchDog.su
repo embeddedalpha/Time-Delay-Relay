@@ -1,0 +1,3 @@
+../Driver/Independent_WatchDog/Independent_WatchDog.c:24:6:IWDG_Init	24	static
+../Driver/Independent_WatchDog/Independent_WatchDog.c:52:6:IWDG_Kick	4	static
+../Driver/Independent_WatchDog/Independent_WatchDog.c:59:6:IWDG_Reset_Check	4	static

@@ -39,15 +39,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00000e25  00000000  00000000  00012cf9  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00008148  00000000  00000000  00013b1e  2**0
+ 18 .debug_line   00008138  00000000  00000000  00013b1e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000906a6  00000000  00000000  0001bc66  2**0
+ 19 .debug_str    000906a6  00000000  00000000  0001bc56  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  000ac30c  2**0
+ 20 .comment      00000043  00000000  00000000  000ac2fc  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000105c  00000000  00000000  000ac350  2**2
+ 21 .debug_frame  0000105c  00000000  00000000  000ac340  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000053  00000000  00000000  000ad3ac  2**0
+ 22 .debug_line_str 00000053  00000000  00000000  000ad39c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -11703,7 +11703,7 @@ void Delay_Timer_ISR()
  8004c26:	4b67      	ldr	r3, [pc, #412]	@ (8004dc4 <Delay_Timer_ISR+0x1d8>)
  8004c28:	881b      	ldrh	r3, [r3, #0]
  8004c2a:	b29b      	uxth	r3, r3
- 8004c2c:	220f      	movs	r2, #15
+ 8004c2c:	2205      	movs	r2, #5
  8004c2e:	4293      	cmp	r3, r2
  8004c30:	d308      	bcc.n	8004c44 <Delay_Timer_ISR+0x58>
 			{
@@ -11793,7 +11793,7 @@ void Delay_Timer_ISR()
  8004ca4:	4b4a      	ldr	r3, [pc, #296]	@ (8004dd0 <Delay_Timer_ISR+0x1e4>)
  8004ca6:	881b      	ldrh	r3, [r3, #0]
  8004ca8:	b29b      	uxth	r3, r3
- 8004caa:	220a      	movs	r2, #10
+ 8004caa:	2205      	movs	r2, #5
  8004cac:	4293      	cmp	r3, r2
  8004cae:	d302      	bcc.n	8004cb6 <Delay_Timer_ISR+0xca>
 		{
@@ -11863,7 +11863,7 @@ void Delay_Timer_ISR()
  8004d12:	881b      	ldrh	r3, [r3, #0]
  8004d14:	b29b      	uxth	r3, r3
  8004d16:	461a      	mov	r2, r3
- 8004d18:	230a      	movs	r3, #10
+ 8004d18:	2305      	movs	r3, #5
  8004d1a:	4619      	mov	r1, r3
  8004d1c:	230f      	movs	r3, #15
  8004d1e:	440b      	add	r3, r1
@@ -11997,24 +11997,28 @@ void G_Call_ISR(void)
 {
  8004de8:	b480      	push	{r7}
  8004dea:	af00      	add	r7, sp, #0
-	if((GPIOA -> IDR & GPIO_IDR_ID0)) G_Flag = 1;
+	if((GPIOA -> IDR & GPIO_IDR_ID0)){
  8004dec:	4b0b      	ldr	r3, [pc, #44]	@ (8004e1c <G_Call_ISR+0x34>)
  8004dee:	691b      	ldr	r3, [r3, #16]
  8004df0:	f003 0301 	and.w	r3, r3, #1
  8004df4:	2b00      	cmp	r3, #0
  8004df6:	d002      	beq.n	8004dfe <G_Call_ISR+0x16>
+		G_Flag = On;
  8004df8:	4b09      	ldr	r3, [pc, #36]	@ (8004e20 <G_Call_ISR+0x38>)
  8004dfa:	2201      	movs	r2, #1
  8004dfc:	701a      	strb	r2, [r3, #0]
-	if(!(GPIOA -> IDR & GPIO_IDR_ID0)) G_Flag = 0;
+	}
+	if(!(GPIOA -> IDR & GPIO_IDR_ID0)) {
  8004dfe:	4b07      	ldr	r3, [pc, #28]	@ (8004e1c <G_Call_ISR+0x34>)
  8004e00:	691b      	ldr	r3, [r3, #16]
  8004e02:	f003 0301 	and.w	r3, r3, #1
  8004e06:	2b00      	cmp	r3, #0
  8004e08:	d102      	bne.n	8004e10 <G_Call_ISR+0x28>
+		G_Flag = Off;
  8004e0a:	4b05      	ldr	r3, [pc, #20]	@ (8004e20 <G_Call_ISR+0x38>)
- 8004e0c:	2200      	movs	r2, #0
+ 8004e0c:	2202      	movs	r2, #2
  8004e0e:	701a      	strb	r2, [r3, #0]
+	}
 }
  8004e10:	bf00      	nop
  8004e12:	46bd      	mov	sp, r7
@@ -12031,24 +12035,28 @@ void W_Call_ISR(void)
 {
  8004e24:	b480      	push	{r7}
  8004e26:	af00      	add	r7, sp, #0
-	if((GPIOA -> IDR & GPIO_IDR_ID1)) W_Flag = 1;
+	if((GPIOA -> IDR & GPIO_IDR_ID1)){
  8004e28:	4b0b      	ldr	r3, [pc, #44]	@ (8004e58 <W_Call_ISR+0x34>)
  8004e2a:	691b      	ldr	r3, [r3, #16]
  8004e2c:	f003 0302 	and.w	r3, r3, #2
  8004e30:	2b00      	cmp	r3, #0
  8004e32:	d002      	beq.n	8004e3a <W_Call_ISR+0x16>
+		W_Flag = On;
  8004e34:	4b09      	ldr	r3, [pc, #36]	@ (8004e5c <W_Call_ISR+0x38>)
  8004e36:	2201      	movs	r2, #1
  8004e38:	701a      	strb	r2, [r3, #0]
-	if(!(GPIOA -> IDR & GPIO_IDR_ID1)) W_Flag = 0;
+	}
+	if(!(GPIOA -> IDR & GPIO_IDR_ID1)){
  8004e3a:	4b07      	ldr	r3, [pc, #28]	@ (8004e58 <W_Call_ISR+0x34>)
  8004e3c:	691b      	ldr	r3, [r3, #16]
  8004e3e:	f003 0302 	and.w	r3, r3, #2
  8004e42:	2b00      	cmp	r3, #0
  8004e44:	d102      	bne.n	8004e4c <W_Call_ISR+0x28>
+		W_Flag = Off;
  8004e46:	4b05      	ldr	r3, [pc, #20]	@ (8004e5c <W_Call_ISR+0x38>)
- 8004e48:	2200      	movs	r2, #0
+ 8004e48:	2202      	movs	r2, #2
  8004e4a:	701a      	strb	r2, [r3, #0]
+	}
 }
  8004e4c:	bf00      	nop
  8004e4e:	46bd      	mov	sp, r7
@@ -12078,8 +12086,8 @@ int main(void)
  8004e6c:	2402      	movs	r4, #2
 			GPIO_Configuration.Speed.None,
  8004e6e:	2304      	movs	r3, #4
-			GPIO_Configuration.Pull.None,
- 8004e70:	2204      	movs	r2, #4
+			GPIO_Configuration.Pull.Pull_Up,
+ 8004e70:	2201      	movs	r2, #1
 			GPIO_Configuration.Alternate_Functions.None);
  8004e72:	2100      	movs	r1, #0
 	GPIO_Pin_Init(GPIOA, 0,
@@ -12109,8 +12117,8 @@ int main(void)
  8004e9a:	2402      	movs	r4, #2
 			GPIO_Configuration.Speed.None,
  8004e9c:	2304      	movs	r3, #4
-			GPIO_Configuration.Pull.None,
- 8004e9e:	2204      	movs	r2, #4
+			GPIO_Configuration.Pull.Pull_Up,
+ 8004e9e:	2201      	movs	r2, #1
 			GPIO_Configuration.Alternate_Functions.None);
  8004ea0:	2100      	movs	r1, #0
 	GPIO_Pin_Init(GPIOA, 1,

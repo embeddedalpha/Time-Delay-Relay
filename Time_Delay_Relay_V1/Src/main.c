@@ -3,6 +3,7 @@
 #include "GPIO/GPIO.h"
 #include "Console/Console.h"
 
+
 volatile uint32_t timer_tick = 0;
 
 
@@ -29,10 +30,10 @@ volatile States_of_Flags Heater_Flag_1 = Undefined, Heater_Flag_2 = Undefined;
 volatile uint16_t W_Flag_Count_ON = 0;
 volatile uint16_t W_Flag_Count_OFF = 0;
 
-const uint16_t fan1_on_delay = 15;
+const uint16_t fan1_on_delay = 5;
 volatile uint16_t fan1_delay_on_timer_tick = 0;
 
-const uint16_t fan2_on_delay = 10;
+const uint16_t fan2_on_delay = 5;
 volatile uint16_t fan2_delay_on_timer_tick = 0;
 
 const uint16_t heater1_on_timer_delay = 15;
@@ -240,15 +241,23 @@ void Delay_Timer_ISR()
 
 void G_Call_ISR(void)
 {
-	if((GPIOA -> IDR & GPIO_IDR_ID0)) G_Flag = 1;
-	if(!(GPIOA -> IDR & GPIO_IDR_ID0)) G_Flag = 0;
+	if((GPIOA -> IDR & GPIO_IDR_ID0)){
+		G_Flag = On;
+	}
+	if(!(GPIOA -> IDR & GPIO_IDR_ID0)) {
+		G_Flag = Off;
+	}
 }
 
 
 void W_Call_ISR(void)
 {
-	if((GPIOA -> IDR & GPIO_IDR_ID1)) W_Flag = 1;
-	if(!(GPIOA -> IDR & GPIO_IDR_ID1)) W_Flag = 0;
+	if((GPIOA -> IDR & GPIO_IDR_ID1)){
+		W_Flag = On;
+	}
+	if(!(GPIOA -> IDR & GPIO_IDR_ID1)){
+		W_Flag = Off;
+	}
 }
 
 
@@ -262,7 +271,7 @@ int main(void)
 			GPIO_Configuration.Mode.Input,
 			GPIO_Configuration.Output_Type.None,
 			GPIO_Configuration.Speed.None,
-			GPIO_Configuration.Pull.None,
+			GPIO_Configuration.Pull.Pull_Up,
 			GPIO_Configuration.Alternate_Functions.None);
 
 	GPIO_Interrupt_Setup(GPIOA,0, GPIO_Configuration.Interrupt_Edge.RISING_FALLING_EDGE, 0, G_Call_ISR);
@@ -271,7 +280,7 @@ int main(void)
 			GPIO_Configuration.Mode.Input,
 			GPIO_Configuration.Output_Type.None,
 			GPIO_Configuration.Speed.None,
-			GPIO_Configuration.Pull.None,
+			GPIO_Configuration.Pull.Pull_Up,
 			GPIO_Configuration.Alternate_Functions.None);
 
 	GPIO_Interrupt_Setup(GPIOA,1, GPIO_Configuration.Interrupt_Edge.RISING_FALLING_EDGE, 0, W_Call_ISR);
