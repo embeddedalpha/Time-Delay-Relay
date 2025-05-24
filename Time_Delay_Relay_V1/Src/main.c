@@ -241,10 +241,13 @@ void Delay_Timer_ISR()
 
 void G_Call_ISR(void)
 {
-	if((GPIOA -> IDR & GPIO_IDR_ID0)){
+	bool pin = (GPIOA->IDR & GPIO_IDR_ID0);
+
+	if(pin == true){
 		G_Flag = On;
 	}
-	if(!(GPIOA -> IDR & GPIO_IDR_ID0)) {
+	else
+	{
 		G_Flag = Off;
 	}
 }
@@ -252,10 +255,13 @@ void G_Call_ISR(void)
 
 void W_Call_ISR(void)
 {
-	if((GPIOA -> IDR & GPIO_IDR_ID1)){
+	bool pin = (GPIOA->IDR & GPIO_IDR_ID1);
+
+	if(pin == true){
 		W_Flag = On;
 	}
-	if(!(GPIOA -> IDR & GPIO_IDR_ID1)){
+	else
+	{
 		W_Flag = Off;
 	}
 }
@@ -328,6 +334,10 @@ int main(void)
 			GPIO_Configuration.Pull.Pull_Down,
 			GPIO_Configuration.Alternate_Functions.None);
 
+
+
+
+
 	Delay_Flag = 0;
 	Delay_Timer.Port = TIM6;
 	Delay_Timer.Mode = Timer_Configurations.Mode.Update;
@@ -341,6 +351,25 @@ int main(void)
 	Timer_Init(&Delay_Timer);
 	Timer_Trigger(&Delay_Timer);
 
+	bool pin = (GPIOA->IDR & GPIO_IDR_ID0);
+
+	if(pin == true){
+		G_Flag = On;
+	}
+	else
+	{
+		G_Flag = Off;
+	}
+
+	pin = (GPIOA->IDR & GPIO_IDR_ID1);
+
+	if(pin == true){
+		W_Flag = On;
+	}
+	else
+	{
+		W_Flag = Off;
+	}
 
 
 	for(;;)
