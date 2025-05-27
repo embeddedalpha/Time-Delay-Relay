@@ -154,8 +154,10 @@ void Delay_Timer_ISR()
 			if(fan1_delay_on_timer_tick >= FAN1_ON_DELAY)
 			{
 				Speed_Tap_1(true);
+
 				G_Flag = Undefined;
 				fan1_delay_on_timer_tick = 0;
+//				IWDG_Kick();
 			}
 		}
 
@@ -167,8 +169,10 @@ void Delay_Timer_ISR()
 		if(fan1_delay_off_timer_tick >= FAN1_OFF_DELAY)
 		{
 			Speed_Tap_1(false);
+
 			G_Flag = Undefined;
 			fan1_delay_off_timer_tick = 0;
+//			IWDG_Kick();
 		}
 	}
 
@@ -260,7 +264,8 @@ int main(void)
 	Output_Func();
 
 
-	bool pin = (Thermostat_Port->IDR & GPIO_IDR_ID0);
+
+	bool pin = GPIO_Read_Pin(Thermostat_Port, 0);
 
 	if(pin == true){
 		G_Flag = On;
@@ -270,7 +275,7 @@ int main(void)
 		G_Flag = Off;
 	}
 
-	pin = (Thermostat_Port->IDR & GPIO_IDR_ID1);
+	pin = GPIO_Read_Pin(Thermostat_Port, 1);
 
 	if(pin == true){
 		W_Flag = On;
